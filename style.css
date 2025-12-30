@@ -1,0 +1,134 @@
+/* style.css - Modern responsive portfolio styles */
+
+:root{
+  --bg:hsl(323, 43%, 54%);
+  --card:#0f1724;
+  --surface:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#6ee7b7;
+  --accent-2:#60a5fa;
+  --text:#e6eef6;
+  --radius:12px;
+  --container:1100px;
+}
+
+/* Basic reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg,#041025 0%, #071426 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  scroll-behavior:smooth;
+  line-height:1.45;
+}
+
+.container{
+  width:90%;
+  max-width:var(--container);
+  margin:0 auto;
+}
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter:blur(6px);
+  background:linear-gradient(180deg, rgba(6,10,16,0.6), rgba(6,10,16,0.25));
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:0.85rem 0;
+}
+.logo{
+  font-weight:700;
+  color:var(--text);
+  text-decoration:none;
+  font-size:1.05rem;
+}
+
+.nav ul{
+  display:flex;
+  gap:1rem;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:0.4rem 0.6rem;
+  border-radius:8px;
+}
+.nav a:hover{color:var(--text); background:rgba(255,255,255,0.02)}
+
+.nav-toggle{display:none; background:none; border:0; color:var(--text); font-size:1.25rem}
+
+/* Hero */
+.hero{padding:4.5rem 0 3rem}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:2rem;
+  align-items:center;
+}
+.hero-text .name{font-size:2.1rem; margin:0 0 0.25rem}
+.role{color:var(--accent); font-weight:600; margin:0 0 0.5rem}
+.lead{color:var(--muted); margin-bottom:1rem}
+.cta{display:inline-block; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#041025; padding:0.6rem 1rem; border-radius:10px; text-decoration:none; font-weight:700}
+
+.hero-media{text-align:center}
+.profile{width:100%; max-width:320px; border-radius:16px; box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+
+/* Sections */
+.section{padding:3rem 0}
+.about p{color:var(--muted)}
+
+.info-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.25rem}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:1.25rem; border-radius:12px; border:1px solid rgba(255,255,255,0.03)}
+.card h3{margin-top:0}
+.skills{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:0.5rem; padding-left:1rem}
+
+.contact-form{display:grid; gap:0.5rem; max-width:600px}
+.contact-form input, .contact-form textarea{
+  padding:0.6rem; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--text)
+}
+.btn{background:transparent; border:1px solid var(--accent); padding:0.5rem 0.9rem; color:var(--accent); border-radius:8px; cursor:pointer}
+
+.social ul{display:flex; gap:0.75rem; list-style:none; padding:0; margin:0}
+.social a{color:var(--muted); text-decoration:none}
+
+/* Footer */
+.site-footer{padding:1.5rem 0; border-top:1px solid rgba(255,255,255,0.02); color:var(--muted)}
+.footer-inner{display:flex; justify-content:center}
+
+/* Reveal animation (used with JS to add .is-visible) */
+.reveal{opacity:0; transform:translateY(18px) scale(0.995); transition:opacity 600ms ease, transform 600ms ease}
+.reveal.is-visible{opacity:1; transform:none}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr; text-align:center}
+  .hero-media{order:-1}
+  .profile{max-width:260px}
+  .info-grid{grid-template-columns:1fr}
+}
+
+@media (max-width:700px){
+  .nav ul{display:none}
+  .nav.open ul{display:flex; flex-direction:column; gap:0.25rem; background:rgba(2,6,23,0.6); position:absolute; right:12px; top:64px; padding:0.75rem; border-radius:10px}
+  .nav-toggle{display:block}
+}
+
+/* Small utilities */
+.text-muted{color:var(--muted)}
+
+/* Accessibility focus states */
+a:focus, button:focus, input:focus, textarea:focus{outline:3px solid rgba(96,165,250,0.15); outline-offset:3px}

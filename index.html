@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio - ChahoubAya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="#hero">Chahoub Aya</a>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#info">Info</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero / Landing -->
+        <section id="hero" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1 class="name">Chahoub Aya</h1>
+                    <p class="role">Student • Developer • Designer</p>
+                    <p class="lead">I build clean, accessible, and delightful web experiences.</p>
+                    <p><a class="cta" href="#contact">Get in touch</a></p>
+                </div>
+                <div class="hero-media">
+                    <!-- Placeholder profile photo; replace with your own image -->
+                    <img class="profile" src="src/aya.jpg" alt="Profile photo">
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section about">
+            <div class="container reveal">
+                <h2>About Me</h2>
+                <p>
+                    I am a passionate front-end developer focused on building accessible and responsive web interfaces.
+                    I enjoy learning new technologies and improving user experiences through thoughtful design and
+                    performance.
+                </p>
+                <p>
+                    Interests include UI/UX, animation, JavaScript, and performance optimizations. My goal is to ship
+                    polished
+                    interfaces that people love to use.
+                </p>
+            </div>
+        </section>
+
+        <!-- Important information: Education / Skills -->
+        <section id="info" class="section info">
+            <div class="container info-grid reveal">
+                <div class="card">
+                    <h3>Education & Experience</h3>
+                    <ul>
+                    <li>B.Sc. in Computer Science — Example University (2022)</li>
+                        <li>Intern — Example Company (Front-end Developer)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Skills</h3>
+                    <ul class="skills">
+                        <li>HTML5 & Semantic Markup</li>
+                        <li>CSS3, Flexbox, Grid</li>
+                        <li>JavaScript (ES6+), DOM</li>
+                        <li>Responsive Design & Accessibility</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section contact">
+            <div class="container reveal">
+                <h2>Contact</h2>
+                <p>Have a project or question? Reach out via email or social media.</p>
+                <form class="contact-form" onsubmit="return false;" aria-label="Contact form">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="your.email@example.com">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" placeholder="Write a short message..."></textarea>
+                    <button class="btn" type="submit">Send (placeholder)</button>
+                </form>
+
+                <div class="social">
+                    <p>Follow me</p>
+                    <ul>
+                        <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                        <li><a href="#" aria-label="GitHub">GitHub</a></li>
+                        <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span>All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
